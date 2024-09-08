@@ -1,83 +1,29 @@
-# Weather CLI Application (README)
+# Weather CLI Application
 
 ## Overview
-This Python-based command-line application allows users to:
-- Register and log in with credentials.
-- Search for the current weather and 5-day weather forecast for any location using the OpenWeatherMap API.
-- Store weather search history in a MySQL database.
-- View, delete, and manage the search history.
-- Update user profiles (username or password).
+A Python-based command-line interface (CLI) application that interacts with the OpenWeatherMap API to fetch real-time weather data and manage user search history using MySQL. The app allows users to register, log in, search for current weather and a 5-day forecast, and manage their search history.
 
 ## Features
-1.   User Authentication  
-   - Register a new account with a username and password (hashed using bcrypt).
-   - Log in with your credentials to access weather search and history features.
-   
-2.   Weather Search  
-   - Search for the current weather in any city.
-   - Get temperature, humidity, weather conditions, and wind speed.
-   
-3.   5-Day Weather Forecast  
-   - View the 5-day forecast for a city with detailed weather for each day.
-   
-4.   Search History Management  
-   - View the history of all the weather searches made by a user.
-   - Delete individual search entries by ID.
+- **User Registration & Login**: Users can create accounts, log in securely using hashed passwords, and manage profiles.
+- **Weather Search**: Search for current weather conditions (temperature, humidity, weather description, wind speed) for any city.
+- **5-Day Forecast**: Retrieve and display a detailed 5-day forecast for any city.
+- **Search History Management**: View, delete, and store weather search history linked to each user.
+- **Profile Management**: Users can update their username and password.
 
-5.   Profile Management  
-   - Update your username or password.
+## Technologies Used
+- **Python**: Core programming language for the CLI app.
+- **MySQL**: For persistent data storage (user information and search history).
+- **OpenWeatherMap API**: To fetch real-time weather and forecast data.
+- **bcrypt**: For securely hashing passwords.
 
-## Requirements
-1.   Python 3.x  
-2.   MySQL Database  
-3.   OpenWeatherMap API Key  
-4.   Python Libraries   (install using `pip`):
-   - `mysql-connector-python`
-   - `bcrypt`
-   - `requests`
+## Prerequisites
+- Python 3.x installed
+- MySQL installed and running
+- OpenWeatherMap API key (register at [OpenWeatherMap](https://openweathermap.org/))
 
-## Setup Instructions
-1.   Clone the Source Code  :
-  	SSSAssignment.py file
+## Installation
 
-2. Install the dependencies:
-	pip install -r requirements.txt
-
-3. Set up MySQL database:
-    -  Run the SQL commands below to create the database and tables.
-
-CREATE DATABASE weather_cli;
-
-USE weather_cli;
-
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE search_history (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    location VARCHAR(255) NOT NULL,
-    weather_data TEXT NOT NULL,
-    search_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-);
-
-4. Run the Application:
-    python SSSAssignment.py
-
-
-## API Key Setup
-- Register at OpenWeatherMap to obtain an API key.
-- Replace "your_openweathermap_api_key" in the main.py with your actual API key.
-
-## Usage
-- Register or login.
-- Search for the weather by city name.
-- View, update, or delete search history.
-- Update profile information.
-- 5-day forecast.
-
-
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/weather-cli-app.git
+   cd weather-cli-app
