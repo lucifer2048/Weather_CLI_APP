@@ -1,6 +1,6 @@
-#Weather CLI Application (README)
+# Weather CLI Application (README)
 
-##Overview
+## Overview
 This Python-based command-line application allows users to:
 - Register and log in with credentials.
 - Search for the current weather and 5-day weather forecast for any location using the OpenWeatherMap API.
@@ -8,26 +8,26 @@ This Python-based command-line application allows users to:
 - View, delete, and manage the search history.
 - Update user profiles (username or password).
 
-##Features
+## Features
 1.   User Authentication  
    - Register a new account with a username and password (hashed using bcrypt).
    - Log in with your credentials to access weather search and history features.
    
 2.   Weather Search  
    - Search for the current weather in any city.
-   - Get temperature, humidity, weather condition, and wind speed.
+   - Get temperature, humidity, weather conditions, and wind speed.
    
 3.   5-Day Weather Forecast  
    - View the 5-day forecast for a city with detailed weather for each day.
    
 4.   Search History Management  
-   - View the history of all weather searches made by a user.
+   - View the history of all the weather searches made by a user.
    - Delete individual search entries by ID.
 
 5.   Profile Management  
    - Update your username or password.
 
-##Requirements
+## Requirements
 1.   Python 3.x  
 2.   MySQL Database  
 3.   OpenWeatherMap API Key  
@@ -36,7 +36,7 @@ This Python-based command-line application allows users to:
    - `bcrypt`
    - `requests`
 
-##Setup Instructions
+## Setup Instructions
 1.   Clone the Source Code  :
   	SSSAssignment.py file
 
@@ -69,13 +69,13 @@ CREATE TABLE search_history (
     python SSSAssignment.py
 
 
-##API Key Setup
+## API Key Setup
 - Register at OpenWeatherMap to obtain an API key.
 - Replace "your_openweathermap_api_key" in the main.py with your actual API key.
 
-##Usage
-- Register or log in.
-- Search for weather by city name.
+## Usage
+- Register or login.
+- Search for the weather by city name.
 - View, update, or delete search history.
 - Update profile information.
 - 5-day forecast.
